@@ -1,0 +1,14 @@
+<ul>
+    <li *ngFor="let book of (books$ | async)">
+        <div class="card">
+            <div class="card-content">
+                <div>{{ book.name }}</div>
+                <div>{{ book.author }}</div>
+                <a class="button is-danger is-small" (click)="removeBook(book)">Eliminar</a>
+            </div>
+        </div>
+    </li>
+</ul>
+
+
+<div class="notification is-danger" *ngIf="(books$ | async).length == 0">No existeb books</div>
